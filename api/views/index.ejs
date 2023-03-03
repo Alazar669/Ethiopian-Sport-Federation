@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+
+      var status = '<%- JSON.stringify(status) %>';
+      if (JSON.parse(status) == "verified") {
+        if (confirm("Do u want to login?")) {
+          window.location.href = "http://localhost:5173/";
+        }
+      }
+      
+    </script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="flex items-center h-screen w-screen justify-center bg-gray-100">
+    <form class="bg-white p-2 flex flex-col" action="" method="post">
+      <h1 class="text-sm text-blue-600 mb-6"><%= email%></h1>
+    
+      <input
+      class="bg-gray-100 rouded-md p-2 "
+        type="password"
+        name="password"
+        id="password"
+        placeholder="password"
+      /><br />
+      <input
+      class="bg-gray-100 rouded-md p-2 "
+        type="password"
+        name="confirm-password"
+        id="confirm-password"
+        placeholder="confirm-password"
+      /><br />
+      <input class="bg-blue-600 text-white p-2 px-6 rou mt-6 hover:bg-blue-500  rounded-md" type="submit" value="submit" />
+    </form>
+  </body>
+</html>
